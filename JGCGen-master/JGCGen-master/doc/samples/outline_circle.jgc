@@ -1,0 +1,36 @@
+#boilerplate
+
+$safe_z = 10
+$default_f = 600
+$plunge_f = 100
+$passdepth = 3
+
+## Uncomment this to disable multiple passes
+##set($r3singlepass = true)
+
+#set($rapidnear = true)
+
+#g($Shapes.outline.circle.radius("10").bridges(4, 3).origin("x0y60"), "-5")
+
+#set($circle = $Shapes.outline.circle.radius("10"))
+#g($circle.cw().origin("x0y0"), "-5")
+#g($circle.ccw().origin("x25y0"), "-5")
+
+#g($circle.cw().leadin("3").origin("x0y-30"), "-5")
+#g($circle.ccw().leadin("3").origin("x25y-30"), "-5")
+
+#g($circle.cw().leadin("-3").origin("x50y-30"), "-5")
+#g($circle.ccw().leadin("-3").origin("x75y-30"), "-5")
+
+## Special feed rate for 3D paths
+$router.push()
+$router.setOverride("default_f", "300")
+
+#set($helix = $Shapes.outline.helix.radius(10).depth(5).pass(3))
+#g($helix.cw().origin("x0y30"))
+#g($helix.ccw().origin("x25y30"))
+
+## Restore original $router settings
+$router.pop()
+
+m2

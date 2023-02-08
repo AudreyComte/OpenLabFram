@@ -1,0 +1,13 @@
+#boilerplate
+#set($rapidnear = true)
+
+$safe_z = 10
+$default_f = 600
+$plunge_f = 100
+
+(Demonstrate outline toolpaths)
+#set($img = $Shapes.surface.image.size(50,50).height(30).tool("3 flat"))
+
+#g($img.file("cylinderstack.png").strategy("outline 1"))
+
+m2

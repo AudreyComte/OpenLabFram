@@ -1,0 +1,46 @@
+#macro(sample, $name, $desc)
+	<tr>
+		<td><a href="../samples/${name}.jgc">${name}.jgc</td>
+		<td><a href="../samples/${name}.ngc">${name}.ngc</td>
+		<td>$desc</td>
+	</tr>
+#end
+
+#define($main)
+
+<table>
+	<thead><tr>
+		<th>Source</th>
+		<th>Output</th>
+		<th>Description</th>
+	</tr></thead>
+	<tbody>
+#sample("demo", "A simple demonstration script")
+#sample("sub", "Demonstrates subroutines and flow control")
+#sample("transforms", "Coordinate transformations")
+#sample("align", "Path alignment")
+#sample("outline_line", "Straight lines")
+#sample("outline_circle", "Circular outlines")
+#sample("outline_rect", "Rectangle outlines")
+#sample("outline_polygon", "Polygon outlines")
+#sample("outline_cut", "Outline cutting")
+#sample("pockets", "Various pockets")
+#sample("pocket_rect", "Rectangle pockets")
+#sample("capture", "How to create custom paths")
+#sample("text", "How to render text")
+#sample("image", "Converting height map images to g-code")
+#sample("image2", "Another heightmap demo")
+#sample("img_simple", "Image carving samples with <i>simple</i> strategy")
+#sample("img_rough", "Image carving samples with <i>rough</i> strategy")
+#sample("img_interp", "Low resolution image interpolation test")
+#sample("img_outline", "Outline strategy test (requires potrace)")
+#sample("img_outline2", "Outline strategy demo")
+#sample("parametric", "Parametric surface demonstration")
+#sample("projection", "Path projection onto image surface")
+#sample("import_svg", "SVG import demonstration")
+#sample("import_svg2", "SVG curve demo")
+	</tbody>
+</table>
+
+#end
+#parse("base.tpl")

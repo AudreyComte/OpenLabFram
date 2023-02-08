@@ -1,0 +1,17 @@
+#boilerplate
+#set($rapidnear = true)
+
+$safe_z = 10
+$default_f = 600
+$plunge_f = 100
+
+(Image carving)
+#set($img = $Shapes.surface.image.file("suzanne.png").size(50,50).height(8).tool("3 ball"))
+
+#g($img.strategy("rough").stepover("50%"))
+
+m1
+
+#g($img.strategy("simple 0 alt").stepover(0))
+
+m2

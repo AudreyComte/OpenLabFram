@@ -1,0 +1,5 @@
+// Creates a FileWriter
+FileWriter file = new FileWriter(String name);
+
+// Creates a BufferedWriter
+BufferedWriter buffer = new BufferedWriter(file);
