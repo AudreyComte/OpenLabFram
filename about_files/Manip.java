@@ -65,7 +65,18 @@ public class Manip {
 		return nb_event;
 	}
 	
+	
+	public void Addwell () {
+		String [] well = {"A1","A2","A3","B1","B2","B3"};
+		int pos = Arrays.asList(well).indexOf(this.getFirst_well());
+		this.data.add(this.getFirst_well());
+		int stop = Arrays.asList(well).indexOf(this.getLast_well());
+		for(int i = 1; i <= stop-1; i++) {
+			pos = pos + 1;
+			String wellAdd = well [pos];
+			this.data.add(wellAdd);
+		}
 }
 
-
+}
 

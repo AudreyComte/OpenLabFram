@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import com.fazecast.jSerialComm.SerialPort;
@@ -68,6 +69,7 @@ public class Controller {
 	public Manip get_myManip () {
 		return this.myManip;
 	}
+	
 	
 	public void go () {
 		int nbEvent = myManip.get_nb_event();

@@ -12,6 +12,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import javax.swing.JButton;
@@ -292,6 +293,15 @@ public class Plate_design extends JFrame {
 		Manip essaiManip = new Manip (comboBox_First_well.getName(), comboBox_Last_well.getName(), 
                 comboBox_Reading_direction.getName(),comboBox_Time.getSelectedItem().toString(),data);
 		
+		String [] well = {"A1","A2","A3","B1","B2","B3"};
+		int pos = Arrays.asList(well).indexOf(essaiManip.getFirst_well());
+		data.add(essaiManip.getFirst_well());
+		int stop = Arrays.asList(well).indexOf(essaiManip.getLast_well());
+		for(int i = 1; i <= stop-1; i++) {
+			pos = pos + 1;
+			String wellAdd = well [pos];
+			data.add(wellAdd);
+		}
 		
 		// Button A1 //
 		JButton btnButton_A1 = new JButton("A1");
